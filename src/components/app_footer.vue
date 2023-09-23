@@ -33,7 +33,7 @@
 
     methods:{
         clickButton(){
-            this.clickedButton = true
+            this.clickedButton = !this.clickedButton
         }
     }
   }
