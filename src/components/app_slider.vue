@@ -8,7 +8,7 @@
     <span>Content goes here</span>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 span{
     color: white;
     font-size: xx-large;

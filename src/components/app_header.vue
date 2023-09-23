@@ -25,7 +25,9 @@
   </div> 
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@use '../components/app_color.scss' as *;
+
 img{
   width: 42%;
 }
@@ -44,8 +46,8 @@ a{
 }
 
 .active{
-  color: #0282f9;
-  border-bottom: 5px solid #0282f9;
+  color: $main-card-bg-blue;
+  border-bottom: 5px solid $main-card-bg-blue;
   padding-top: 5px;
 }
 </style>

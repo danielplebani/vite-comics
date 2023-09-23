@@ -10,7 +10,7 @@
 
 #slider{
     background-color: $slider-bg-black;
-    height: 15vh;
+    height: 16vh;
     padding: 0 calc(35% / 2);
     display: flex;
     align-items: center;
@@ -18,9 +18,18 @@
 
 #main_card{
     background-color: $main-card-bg-blue;
-    height: 20vh;
+    height: 17vh;
     padding: 0 calc(35% / 2);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+};
+
+#main_body{
+    background-image: url(./assets/img/footer-bg.jpg);
+    height: 40vh;
+    padding: 0 calc(35% / 2);
+}
+
+#footer{
+    background-color: $footer-bg-gray;
+    height: 12vh;
+    padding: 0 calc(35% / 2);
 }
