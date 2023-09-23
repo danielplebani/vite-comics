@@ -1,6 +1,62 @@
 <script>
   export default{
-    name: 'app_header'
+    name: 'app_header',
+
+    data(){
+      return{
+        choices: [
+          {
+            name:'CHARACTERS',
+            click:false
+          },
+          {
+            name:'COMICS',
+            click:true
+          },
+          {
+            name:'MOVIES',
+            click:false
+          },
+          {
+            name:'TV',
+            click:false
+          },
+          {
+            name:'GAMES',
+            click:false
+          },
+          {
+            name:'COLLECTIBLES',
+            click:false
+          },
+          {
+            name:'VIDEOS',
+            click:false
+          },
+          {
+            name:'FANS',
+            click:false
+          },
+          {
+            name:'NEWS',
+            click:false
+          },
+          {
+            name:'SHOP',
+            click:false
+          }
+        ],
+      }
+    },
+
+    methods:{
+      choiceClicked(index){
+        for (let i = 0; i < this.choices.length; i++) {
+          this.choices[i].click = false;
+        }
+        this.choices[index].click = true;
+      }
+    }
   }
 </script>
 
@@ -11,16 +67,11 @@
     </div>
 
     <div style="height: 100%;" class="col d-flex justify-content-end">
-      <a href="#">CHARACTERS</a>
-      <a href="#" class="active">COMICS</a>
-      <a href="#">MOVIES</a>
-      <a href="#">TV</a>
-      <a href="#">GAMES</a>
-      <a href="#">COLLECTIBLES</a>
-      <a href="#">VIDEOS</a>
-      <a href="#">FANS</a>
-      <a href="#">NEWS</a>
-      <a href="#">SHOP</a>
+
+      <div v-for="(choice, index) in choices">
+        <a @click="choiceClicked(index)" :class="choice.click == true ? 'active' : '' " href="#">{{choice.name}}</a>
+      </div>
+
     </div>
   </div> 
 </template>
