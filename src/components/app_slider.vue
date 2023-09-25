@@ -5,6 +5,11 @@ import app_comics from '../app_comics.js';
   export default{
     name: 'app_slider',
 
+    props: {
+      img: String,
+      name: String
+    },
+
     data(){
       return{
         app_comics
@@ -19,11 +24,23 @@ import app_comics from '../app_comics.js';
     </div>
 
     <div class="films d-flex flex-wrap justify-content-around">
+      <div>
+        <comic v-for="comic in app_comics"
+        :img="comic.thumb"
+        :name="comic.series" />
+      </div>
+
+      <div>
+        <img :src="thumb">
+        <h1>{{name}}</h1>
+      </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
+
 @use '../app_color.scss' as *;
+
 .current_series{
   height: 50vh;
   padding: 0 calc(35% / 2);
@@ -41,6 +58,7 @@ import app_comics from '../app_comics.js';
       bottom: -17px;
     }
 }
+
 .films{
   height: 70vh;
   padding: 0 calc(35% / 2);
