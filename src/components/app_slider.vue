@@ -1,17 +1,49 @@
 <script>
+
+import app_comics from '../app_comics.js';
+
   export default{
-    name: 'app_slider'
+    name: 'app_slider',
+
+    data(){
+      return{
+        app_comics
+      }
+    }
   }
 </script>
 
 <template>
-    <span>Content goes here</span>
+    <div class="current_series">
+      <button><strong>CURRENT SERIES</strong></button>
+    </div>
+
+    <div class="films d-flex flex-wrap justify-content-around">
+    </div>
 </template>
 
 <style lang="scss" scoped>
-span{
-    color: white;
-    font-size: xx-large;
-    font-family: 'Roboto Condensed', sans-serif;
+@use '../app_color.scss' as *;
+.current_series{
+  height: 50vh;
+  padding: 0 calc(35% / 2);
+  background-image: url(../assets/img/jumbotron.jpg);
+  background-size: cover;
+  position: relative;
+
+    button{
+      border: none;
+      color: white;
+      background-color: $main-card-bg-blue;
+      font-family: 'Roboto Condensed', sans-serif;
+      padding: 5px 15px;
+      position: absolute;
+      bottom: -17px;
+    }
+}
+.films{
+  height: 70vh;
+  padding: 0 calc(35% / 2);
+  background-color: $slider-bg-black;
 }
 </style>

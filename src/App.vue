@@ -12,10 +12,6 @@
       app_main_card,
       app_main_body,
       app_footer,
-    },
-    data(){
-      return{
-      }
     }
   }
 </script>
@@ -28,7 +24,3 @@
   <app_main_body id="main_body"></app_main_body>
   <app_footer id="footer"></app_footer>
 </template>
-
-
-<style lang="scss" scoped>
-</style>

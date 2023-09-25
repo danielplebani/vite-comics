@@ -55,7 +55,7 @@
 </template>
 
 <style lang="scss" scoped>
-@use '../components/app_color.scss' as *;
+@use '../app_color.scss' as *;
 
 button{
     background-color: transparent;

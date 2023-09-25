@@ -14,6 +14,3 @@ export default{
 <template>
   <app_card_markup></app_card_markup>
 </template>
-
-<style lang="scss" scoped>
-</style>

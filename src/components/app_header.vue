@@ -45,7 +45,7 @@
             name:'SHOP',
             click:false
           }
-        ],
+        ]
       }
     },
 
@@ -77,7 +77,7 @@
 </template>
 
 <style lang="scss" scoped>
-@use '../components/app_color.scss' as *;
+@use '../app_color.scss' as *;
 
 img{
   width: 42%;

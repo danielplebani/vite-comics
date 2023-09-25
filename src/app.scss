@@ -1,6 +1,6 @@
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@use "../node_modules/bootstrap/scss/bootstrap.scss";
 
-@import "./components/app_color.scss";
+@use "./app_color.scss" as *;
 
 #header{
     background-color: $header-bg-white;
@@ -10,8 +10,6 @@
 
 #slider{
     background-color: $slider-bg-black;
-    height: 16vh;
-    padding: 0 calc(35% / 2);
     display: flex;
     align-items: center;
 };
