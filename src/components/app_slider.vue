@@ -1,21 +1,16 @@
 <script>
 
-import app_comics from '../app_comics.js';
+import app_comics from '../app_comics';
 
-  export default{
-    name: 'app_slider',
+export default {
+  name: 'app_slider',
 
-    props: {
-      img: String,
-      name: String
-    },
-
-    data(){
-      return{
-        app_comics
-      }
+  data() {
+    return {
+      app_comics
     }
   }
+}
 </script>
 
 <template>
@@ -23,18 +18,17 @@ import app_comics from '../app_comics.js';
       <button><strong>CURRENT SERIES</strong></button>
     </div>
 
-    <div class="films d-flex flex-wrap justify-content-around">
-      <div>
-        <comic v-for="comic in app_comics"
-        :img="comic.thumb"
-        :name="comic.series" />
+    <div class="films pt-5 pb-3 d-flex flex-column">
+      <div class="container d-flex flex-wrap justify-content-around">
+        <div v-for="comic in app_comics" :key="comic.series" class="mb-3">
+          <img :src="comic.thumb" class="mb-3">
+          <p>{{comic.series}}</p>
+        </div>
       </div>
 
-      <div>
-        <img :src="thumb">
-        <h1>{{name}}</h1>
-      </div>
+      <button><strong>LOAD MORE</strong></button>
     </div>
+
 </template>
 
 <style lang="scss" scoped>
@@ -60,8 +54,34 @@ import app_comics from '../app_comics.js';
 }
 
 .films{
-  height: 70vh;
   padding: 0 calc(35% / 2);
   background-color: $slider-bg-black;
+
+  .container{
+    div{
+    width: calc(90% / 6);
+      img{
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+      }
+      p{
+        color: white;
+        font-size: x-small;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  button{
+    border: none;
+    color: white;
+    background-color: $main-card-bg-blue;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: x-small;
+    padding: 5px 40px;
+    text-align: center;
+    margin: auto;
+  }
 }
 </style>
