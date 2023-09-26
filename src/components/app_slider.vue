@@ -25,7 +25,7 @@ export default {
 
     <div class="films pt-5 pb-3 d-flex flex-column">
       <div class="container d-flex flex-wrap justify-content-around">
-        <app_products v-for="product in app_comics" :thumb="product.thumb" :series="product.series" class="mb-3"></app_products>
+        <app_products v-for="comic in app_comics" :thumb="comic.thumb" :series="comic.series" class="mb-3"></app_products>
       </div>
 
       <button><strong>LOAD MORE</strong></button>
