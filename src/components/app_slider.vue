@@ -1,6 +1,7 @@
 <script>
 
 import app_comics from '../app_comics';
+import app_products from './app_products.vue';
 
 export default {
   name: 'app_slider',
@@ -9,6 +10,10 @@ export default {
     return {
       app_comics
     }
+  },
+
+  components:{
+    app_products
   }
 }
 </script>
@@ -20,10 +25,7 @@ export default {
 
     <div class="films pt-5 pb-3 d-flex flex-column">
       <div class="container d-flex flex-wrap justify-content-around">
-        <div v-for="comic in app_comics" :key="comic.series" class="mb-3">
-          <img :src="comic.thumb" class="mb-3">
-          <p>{{comic.series}}</p>
-        </div>
+        <app_products v-for="product in app_comics" :thumb="product.thumb" :series="product.series" class="mb-3"></app_products>
       </div>
 
       <button><strong>LOAD MORE</strong></button>
@@ -60,16 +62,6 @@ export default {
   .container{
     div{
     width: calc(90% / 6);
-      img{
-        width: 100%;
-        aspect-ratio: 1;
-        object-fit: cover;
-      }
-      p{
-        color: white;
-        font-size: x-small;
-        text-transform: uppercase;
-      }
     }
   }
 
